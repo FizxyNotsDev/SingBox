@@ -1,0 +1,119 @@
+{
+  "log": {
+    "level": "info",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      { "type": "tls", "tag": "dns_cf", "server": "1.1.1.1" },
+      { "type": "udp", "tag": "dns_xl1", "server": "112.215.36.36" },
+      { "type": "udp", "tag": "dns_xl2", "server": "112.215.37.37" },
+      { "type": "local", "tag": "dns_local" },
+      { "type": "fakeip", "tag": "fakeip", "inet4_range": "198.18.0.0/15", "inet6_range": "fc00::/18" }
+    ],
+    "rules": [
+      { "domain_suffix": ["xl.co.id","axisnet.id"], "server": "dns_xl1" },
+      { "query_type": ["A","AAAA"], "server": "fakeip" }
+    ]
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "mtu": 1492,
+      "address": ["172.16.0.1/30","fd00::1/126"],
+      "auto_route": true,
+      "strict_route": true,
+      "stack": "system"
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "urltest",
+      "tag": "Best Latency",
+      "outbounds": [
+        "Acak 1 - 🇸🇬 SG Oracle Corporation",
+        "Acak 2 - 🇸🇬 SG Oracle Corporation",
+        "Acak 3 - 🇸🇬 SG Aeza International",
+        "Acak 4 - 🇸🇬 SG VPLS SIN1",
+        "Acak 5 - 🇸🇬 SG Oracle Corporation",
+        "Acak 6 - 🇸🇬 SG DigitalOcean LLC",
+        "Acak 7 - 🇸🇬 SG Zappie Host LLC",
+        "Acak 8 - 🇸🇬 SG OVH Singapore PTE LTD",
+        "Acak 9 - 🇸🇬 SG DigitalOcean LLC",
+        "Acak 10 - 🇸🇬 SG Oracle Corporation",
+        "natanvpn",
+        "natanvpn2"
+      ],
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "30s",
+      "tolerance": 50
+    },
+    {
+      "type": "selector",
+      "tag": "Internet",
+      "outbounds": [
+        "Best Latency",
+        "Acak 1 - 🇸🇬 SG Oracle Corporation",
+        "Acak 2 - 🇸🇬 SG Oracle Corporation",
+        "Acak 3 - 🇸🇬 SG Aeza International",
+        "Acak 4 - 🇸🇬 SG VPLS SIN1",
+        "Acak 5 - 🇸🇬 SG Oracle Corporation",
+        "Acak 6 - 🇸🇬 SG DigitalOcean LLC",
+        "Acak 7 - 🇸🇬 SG Zappie Host LLC",
+        "Acak 8 - 🇸🇬 SG OVH Singapore PTE LTD",
+        "Acak 9 - 🇸🇬 SG DigitalOcean LLC",
+        "Acak 10 - 🇸🇬 SG Oracle Corporation",
+        "natanvpn",
+        "natanvpn2",
+        "direct"
+      ],
+      "default": "Best Latency"
+    },
+    { "type": "selector", "tag": "Sosmed", "outbounds": ["Internet","direct"], "default": "Internet" },
+    { "type": "selector", "tag": "Streaming", "outbounds": ["Internet","direct"], "default": "Internet" },
+    { "type": "selector", "tag": "Banking", "outbounds": ["direct","Internet"], "default": "direct" },
+    { "type": "selector", "tag": "Game", "outbounds": ["Internet","direct"], "default": "Internet" },
+    { "type": "selector", "tag": "AdsBlock", "outbounds": ["direct","Internet"], "default": "direct" },
+    { "type": "selector", "tag": "Download", "outbounds": ["direct","Internet"], "default": "direct" },
+    { "type": "direct", "tag": "direct" },
+
+    // VLESS Outbounds lengkap
+    { "type": "vless", "tag": "Acak 1 - 🇸🇬 SG Oracle Corporation", "server": "quiz.int.vidio.com", "server_port": 80, "uuid": "a6cb6b90-9eb7-4e94-82a1-baa19518c044", "transport": { "type": "ws", "path": "/138.2.107.107-443", "headers": { "Host": "quiz.int.vidio.com.nuclear.biz.id" } } },
+    { "type": "vless", "tag": "Acak 2 - 🇸🇬 SG Oracle Corporation", "server": "quiz.int.vidio.com", "server_port": 80, "uuid": "14215cbf-3910-4119-a3a4-75293e2921f9", "transport": { "type": "ws", "path": "/138.2.69.236-23334", "headers": { "Host": "quiz.int.vidio.com.nuclear.biz.id" } } },
+    { "type": "vless", "tag": "Acak 3 - 🇸🇬 SG Aeza International", "server": "quiz.int.vidio.com", "server_port": 80, "uuid": "08d5af2b-1602-45dc-b07b-2702a9227cf8", "transport": { "type": "ws", "path": "/83.147.252.97-443", "headers": { "Host": "quiz.int.vidio.com.nuclear.biz.id" } } },
+    { "type": "vless", "tag": "Acak 4 - 🇸🇬 SG VPLS SIN1", "server": "quiz.int.vidio.com", "server_port": 80, "uuid": "d32ba072-af5b-4ad2-a251-e60581210a91", "transport": { "type": "ws", "path": "/110.34.164.39-28758", "headers": { "Host": "quiz.int.vidio.com.nuclear.biz.id" } } },
+    { "type": "vless", "tag": "Acak 5 - 🇸🇬 SG Oracle Corporation", "server": "quiz.int.vidio.com", "server_port": 80, "uuid": "e23c6402-1514-42e4-a411-91240a2e8b43", "transport": { "type": "ws", "path": "/138.2.95.33-17465", "headers": { "Host": "quiz.int.vidio.com.nuclear.biz.id" } } },
+    { "type": "vless", "tag": "Acak 6 - 🇸🇬 SG DigitalOcean LLC", "server": "quiz.int.vidio.com", "server_port": 80, "uuid": "d31b685f-4c64-4a70-868b-ed41e266c4e0", "transport": { "type": "ws", "path": "/128.199.134.152-443", "headers": { "Host": "quiz.int.vidio.com.nuclear.biz.id" } } },
+    { "type": "vless", "tag": "Acak 7 - 🇸🇬 SG Zappie Host LLC", "server": "quiz.int.vidio.com", "server_port": 80, "uuid": "5f5a51ba-eb4a-477d-9a9d-0c23bf4f0353", "transport": { "type": "ws", "path": "/83.142.30.5-2096", "headers": { "Host": "quiz.int.vidio.com.nuclear.biz.id" } } },
+    { "type": "vless", "tag": "Acak 8 - 🇸🇬 SG OVH Singapore PTE LTD", "server": "quiz.int.vidio.com", "server_port": 80, "uuid": "4c3d05e0-9904-4f75-bcd4-ac271c6962c3", "transport": { "type": "ws", "path": "/51.79.158.58-2053", "headers": { "Host": "quiz.int.vidio.com.nuclear.biz.id" } } },
+    { "type": "vless", "tag": "Acak 9 - 🇸🇬 SG DigitalOcean LLC", "server": "quiz.int.vidio.com", "server_port": 80, "uuid": "f66b96ac-9f1b-44a8-9fdf-36238ef1de1c", "transport": { "type": "ws", "path": "/128.199.237.143-443", "headers": { "Host": "quiz.int.vidio.com.nuclear.biz.id" } } },
+    { "type": "vless", "tag": "Acak 10 - 🇸🇬 SG Oracle Corporation", "server": "quiz.int.vidio.com", "server_port": 80, "uuid": "5cb90b1f-c3f5-4096-a81e-136dd8581db1", "transport": { "type": "ws", "path": "/138.2.77.179-30018", "headers": { "Host": "quiz.int.vidio.com.nuclear.biz.id" } } },
+    { "type": "vless", "tag": "natanvpn", "server": "quiz.int.vidio.com", "server_port": 80, "uuid": "183267ff-dfee-487a-9d6e-e63184cb3c00", "transport": { "type": "ws", "path": "/vless", "headers": { "Host": "3.round.web.id" } } },
+    { "type": "vless", "tag": "natanvpn2", "server": "quiz.int.vidio.com", "server_port": 80, "uuid": "ccbbf583-b415-493f-bbb7-e0fd5f17a274", "transport": { "type": "ws", "path": "/vless", "headers": { "Host": "4.round.web.id" } } }
+  ],
+  "route": {
+    "rules": [
+      { "inbound": "tun-in", "action": "sniff" },
+      { "protocol": "dns", "action": "hijack-dns" },
+      { "network": "icmp", "action": "reject" }, // update terbaru
+      { "network": "udp", "outbound": "natanvpn" },
+      { "network": "tcp", "outbound": "Internet" },
+      { "ip_cidr": ["0.0.0.0/8","127.0.0.0/8","198.18.0.0/15","fc00::/18","::/128","::1/128"], "action": "reject" },
+      { "ip_is_private": true, "outbound": "direct" },
+      { "domain_suffix": ["doubleclick.net","googlesyndication.com","ads.youtube.com","adservice.google.com","facebookads.com"], "outbound": "AdsBlock" },
+      { "domain_suffix": ["facebook.com","fbcdn.net","instagram.com","tiktok.com","whatsapp.net","twitter.com","x.com","snapchat.com"], "outbound": "Sosmed" },
+      { "domain_suffix": ["youtube.com","ytimg.com","googlevideo.com","netflix.com","nflxvideo.net","disneyplus.com","hulu.com","spotify.com","joox.com"], "outbound": "Streaming" },
+      { "domain_suffix": ["bca.co.id","klikbca.com","bankmandiri.co.id","livin.mandiri.co.id","bni.co.id","bri.co.id","danamon.co.id","cimbniaga.co.id","permatabank.com","maybank.co.id","ocbcnisp.com","bankmega.com","bankjatim.co.id","bankbjb.co.id","btn.co.id","bankbsi.co.id","bankmuamalat.co.id","bukopin.co.id","ovo.id","dana.id","linkaja.id","gopay.co.id","shopeepay.co.id","jenius.co.id","kredivo.com","akulaku.com","flip.id"], "outbound": "Banking" },
+      { "domain_suffix": ["mobilelegends.com","ml.youngjoygame.com","pubgmobile.com","igamecj.com","garena.com","freefiremobile.com","playstation.com","xbox.com","riotgames.com","valorant.com","epicgames.com","steamcommunity.com","steampowered.com","roblox.com","rbxcdn.com"], "outbound": "Game" },
+      { "domain_suffix": ["dl.google.com","update.microsoft.com","download.windowsupdate.com","cdn.cloudflare.net","cdn.discordapp.com"], "outbound": "Download" }
+    ],
+    "final": "Internet",
+    "auto_detect_interface": true,
+    "default_domain_resolver": { "server": "dns_local","rewrite_ttl": 65,"client_subnet": "1.1.1.1" }
+  },
+  "experimental": {
+    "cache_file": { "enabled": true, "path": "cache.db" },
+    "clash_api": { "external_controller": "127.0.0.1:9090","external_ui": "ui","default_mode": "rule" }
+  }
+}
