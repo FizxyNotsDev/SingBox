@@ -1,0 +1,140 @@
+proxies:
+  - name: "🇮🇩 First Cagayan Converge Data Center Inc. WS NTLS [smart]"
+    type: vless
+    server: quiz.vidio.com
+    port: 80
+    uuid: 5df196b2-926e-4373-87b5-639d50d66380
+    udp: true
+    tls: false
+    network: ws
+    servername: smart.flex.biz.id
+    ws-opts:
+      path: "/203.194.112.119-2053"
+      headers:
+        Host: smart.flex.biz.id
+
+  - name: "🇮🇩 PT Pusat Media Indonesia WS NTLS [smart]"
+    type: vless
+    server: quiz.vidio.com
+    port: 80
+    uuid: 5df196b2-926e-4373-87b5-639d50d66380
+    udp: true
+    tls: false
+    network: ws
+    servername: smart.flex.biz.id
+    ws-opts:
+      path: "/103.6.207.108-8080"
+      headers:
+        Host: smart.flex.biz.id
+
+  - name: "🇮🇩 Amazon.com WS NTLS [smart]"
+    type: vless
+    server: quiz.vidio.com
+    port: 80
+    uuid: 5df196b2-926e-4373-87b5-639d50d66380
+    udp: true
+    tls: false
+    network: ws
+    servername: smart.flex.biz.id
+    ws-opts:
+      path: "/43.218.77.16-1443"
+      headers:
+        Host: smart.flex.biz.id
+
+  - name: "🇮🇩 PT Mitra Visioner WS NTLS [smart]"
+    type: vless
+    server: quiz.vidio.com
+    port: 80
+    uuid: 5df196b2-926e-4373-87b5-639d50d66380
+    udp: true
+    tls: false
+    network: ws
+    servername: smart.flex.biz.id
+    ws-opts:
+      path: "/206.84.101.83-8443"
+      headers:
+        Host: smart.flex.biz.id
+
+  - name: "🇮🇩 CV. Rumahweb Indonesia WS NTLS [smart]"
+    type: vless
+    server: quiz.vidio.com
+    port: 80
+    uuid: 5df196b2-926e-4373-87b5-639d50d66380
+    udp: true
+    tls: false
+    network: ws
+    servername: smart.flex.biz.id
+    ws-opts:
+      path: "/203.194.112.119-8443"
+      headers:
+        Host: smart.flex.biz.id
+
+  - name: "🇸🇬 SGP_VULTR_CUST WS NTLS [smart]"
+    type: vless
+    server: quiz.vidio.com
+    port: 80
+    uuid: 4d71db41-e292-492f-90bc-c05773f594fa
+    udp: true
+    tls: false
+    network: ws
+    servername: smart.flex.biz.id
+    ws-opts:
+      path: "/139.180.215.77-57878"
+      headers:
+        Host: smart.flex.biz.id
+
+  - name: "🇸🇬 Greencloud LLC WS NTLS [smart]"
+    type: vless
+    server: quiz.vidio.com
+    port: 80
+    uuid: 4d71db41-e292-492f-90bc-c05773f594fa
+    udp: true
+    tls: false
+    network: ws
+    servername: smart.flex.biz.id
+    ws-opts:
+      path: "/194.127.193.240-50791"
+      headers:
+        Host: smart.flex.biz.id
+
+  - name: "🇸🇬 Alibaba Cloud - SG WS NTLS [smart]"
+    type: vless
+    server: quiz.vidio.com
+    port: 80
+    uuid: 4d71db41-e292-492f-90bc-c05773f594fa
+    udp: true
+    tls: false
+    network: ws
+    servername: smart.flex.biz.id
+    ws-opts:
+      path: "/47.74.254.191-8900"
+      headers:
+        Host: smart.flex.biz.id
+
+  - name: "🇸🇬 DigitalOcean WS NTLS [smart]"
+    type: vless
+    server: quiz.vidio.com
+    port: 80
+    uuid: 4d71db41-e292-492f-90bc-c05773f594fa
+    udp: true
+    tls: false
+    network: ws
+    servername: smart.flex.biz.id
+    ws-opts:
+      path: "/178.128.80.43-443"
+      headers:
+        Host: smart.flex.biz.id
+
+  - name: "🇸🇬 Oracle Corporation WS NTLS [smart]"
+    type: vless
+    server: quiz.vidio.com
+    port: 80
+    uuid: 2f6e2648-3eb4-4d8d-bac1-d7885ccb16b3
+    udp: true
+    tls: false
+    network: ws
+    servername: smart.flex.biz.id
+    ws-opts:
+      path: "/138.2.89.238-43254"
+      headers:
+        Host: smart.flex.biz.id
