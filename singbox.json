@@ -76,7 +76,7 @@
     },
     {
       "type": "selector",
-      "tag": "Internet",
+      "tag": "🚀 INTERNET",
       "outbounds": [
         "♻️ BEST-PING",
         "TCP CONNECTION☁",
@@ -89,16 +89,16 @@
       "type": "selector",
       "tag": "Sosmed",
       "outbounds": [
-        "Internet",
+        "🚀 INTERNET",
         "direct"
       ],
-      "default": "Internet"
+      "default": "🚀 INTERNET"
     },
     {
       "type": "selector",
       "tag": "Streaming",
       "outbounds": [
-        "Internet",
+        "🚀 INTERNET",
         "direct"
       ],
       "default": "Internet"
@@ -108,7 +108,7 @@
       "tag": "Banking",
       "outbounds": [
         "direct",
-        "Internet"
+        "🚀 INTERNET"
       ],
       "default": "direct"
     },
@@ -116,10 +116,10 @@
       "type": "selector",
       "tag": "Game",
       "outbounds": [
-        "Internet",
+        "🚀 INTERNET",
         "direct"
       ],
-      "default": "Internet"
+      "default": "🚀 INTERNET"
     },
     {
       "type": "selector",
@@ -127,7 +127,7 @@
       "outbounds": [
         "block-ads",
         "direct",
-        "Internet"
+        "🚀 INTERNET"
       ],
       "default": "block-ads"
     },
@@ -141,7 +141,7 @@
       "outbounds": [
         "block-nsfw",
         "direct",
-        "Internet"
+        "🚀 INTERNET"
       ],
       "default": "block-nsfw"
     },
@@ -154,7 +154,7 @@
       "tag": "Download",
       "outbounds": [
         "direct",
-        "Internet"
+        "🚀 INTERNET"
       ],
       "default": "direct"
     },
