@@ -96,7 +96,7 @@
     },
     {
       "type": "selector",
-      "tag": "Streaming",
+      "tag": "🎬 STREAMING",
       "outbounds": [
         "🚀 INTERNET",
         "direct"
