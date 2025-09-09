@@ -286,7 +286,7 @@
           "x.com",
           "snapchat.com"
         ],
-        "outbound": "Sosmed"
+        "outbound": "🌐 SOSMED"
       },
       {
         "domain_suffix": [
@@ -300,7 +300,7 @@
           "spotify.com",
           "joox.com"
         ],
-        "outbound": "Streaming"
+        "outbound": "🎬 STREAMING"
       },
       {
         "domain_suffix": [
@@ -332,7 +332,7 @@
           "akulaku.com",
           "flip.id"
         ],
-        "outbound": "Banking"
+        "outbound": "🏦 M-BANKING"
       },
       {
         "domain_suffix": [
@@ -352,7 +352,7 @@
           "roblox.com",
           "rbxcdn.com"
         ],
-        "outbound": "Game"
+        "outbound": "🎮 GAME"
       },
       {
         "domain_suffix": [
@@ -362,7 +362,7 @@
           "cdn.cloudflare.net",
           "cdn.discordapp.com"
         ],
-        "outbound": "Download"
+        "outbound": "📥 DOWNLOAD"
       }
     ],
     "rule_set": [
