@@ -370,35 +370,35 @@
         "type": "remote",
         "tag": "geosite-youtube",
         "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-youtube.srs",
-        "download_detour": "Internet",
+        "download_detour": "🚀 INTERNET",
         "update_interval": "24h0m0s"
       },
       {
         "type": "remote",
         "tag": "geosite-instagram",
         "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/instagram.srs",
-        "download_detour": "Internet",
+        "download_detour": "🚀 INTERNET",
         "update_interval": "24h0m0s"
       },
       {
         "type": "remote",
         "tag": "geosite-tiktok",
         "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/tiktok.srs",
-        "download_detour": "Internet",
+        "download_detour": "🚀 INTERNET",
         "update_interval": "24h0m0s"
       },
       {
         "type": "remote",
         "tag": "oisd-full",
         "url": "https://github.com/malikshi/sing-box-geo/raw/refs/heads/rule-set-geosite/geosite-oisd-full.srs",
-        "download_detour": "Internet",
+        "download_detour": "🚀 INTERNET",
         "update_interval": "24h0m0s"
       },
       {
         "type": "remote",
         "tag": "oisd-nsfw",
         "url": "https://github.com/malikshi/sing-box-geo/raw/refs/heads/rule-set-geosite/geosite-oisd-nsfw.srs",
-        "download_detour": "Internet",
+        "download_detour": "🚀 INTERNET",
         "update_interval": "24h0m0s"
       }
     ],
