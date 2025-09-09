@@ -87,7 +87,7 @@
     },
     {
       "type": "selector",
-      "tag": "Sosmed",
+      "tag": "🌐 SOSMED",
       "outbounds": [
         "🚀 INTERNET",
         "direct"
