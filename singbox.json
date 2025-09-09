@@ -78,12 +78,12 @@
       "type": "selector",
       "tag": "Internet",
       "outbounds": [
-        "Best Latency",
+        "♻️ BEST-LATENCY",
         "TCP CONNECTION☁",
         "UDP CONNECTION☁",
         "direct"
       ],
-      "default": "Best Latency"
+      "default": "♻️ BEST-LATENCY"
     },
     {
       "type": "selector",
