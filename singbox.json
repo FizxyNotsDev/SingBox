@@ -105,7 +105,7 @@
     },
     {
       "type": "selector",
-      "tag": "Banking",
+      "tag": "🏦 M-BANKING",
       "outbounds": [
         "direct",
         "🚀 INTERNET"
@@ -114,7 +114,7 @@
     },
     {
       "type": "selector",
-      "tag": "Game",
+      "tag": "🎮 GAME",
       "outbounds": [
         "🚀 INTERNET",
         "direct"
@@ -123,7 +123,7 @@
     },
     {
       "type": "selector",
-      "tag": "AdsBlock",
+      "tag": "📢 AdsBlock",
       "outbounds": [
         "block-ads",
         "direct",
@@ -137,7 +137,7 @@
     },
     {
       "type": "selector",
-      "tag": "NSFWBlock",
+      "tag": "🔞 NSFWBlock",
       "outbounds": [
         "block-nsfw",
         "direct",
@@ -151,7 +151,7 @@
     },
     {
       "type": "selector",
-      "tag": "Download",
+      "tag": "📥 DOWNLOAD",
       "outbounds": [
         "direct",
         "🚀 INTERNET"
@@ -207,11 +207,11 @@
       },
       {
         "rule_set": "oisd-full",
-        "outbound": "AdsBlock"
+        "outbound": "📢 AdsBlock"
       },
       {
         "rule_set": "oisd-nsfw",
-        "outbound": "NSFWBlock"
+        "outbound": "🔞 NSFWBlock"
       },
       {
         "type": "logical",
