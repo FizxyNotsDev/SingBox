@@ -65,7 +65,7 @@
   "outbounds": [
     {
       "type": "urltest",
-      "tag": "♻️ BEST-LATENCY",
+      "tag": "♻️ BEST-PING",
       "outbounds": [
         "TCP CONNECTION☁",
         "UDP CONNECTION☁"
@@ -78,12 +78,12 @@
       "type": "selector",
       "tag": "Internet",
       "outbounds": [
-        "♻️ BEST-LATENCY",
+        "♻️ BEST-PING",
         "TCP CONNECTION☁",
         "UDP CONNECTION☁",
         "direct"
       ],
-      "default": "♻️ BEST-LATENCY"
+      "default": "♻️ BEST-PING"
     },
     {
       "type": "selector",
