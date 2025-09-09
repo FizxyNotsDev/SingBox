@@ -65,7 +65,7 @@
   "outbounds": [
     {
       "type": "urltest",
-      "tag": "Best Latency",
+      "tag": "♻️ BEST-LATENCY",
       "outbounds": [
         "TCP CONNECTION☁",
         "UDP CONNECTION☁"
