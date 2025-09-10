@@ -83,7 +83,8 @@
         "UDP CONNECTION☁",
         "direct"
       ],
-      "default": "♻️ BEST-PING"
+      "default": "♻️ BEST-PING",
+      "interrupt_exist_connections": true
     },
     {
       "type": "selector",
