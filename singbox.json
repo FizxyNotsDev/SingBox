@@ -67,17 +67,9 @@
       "type": "urltest",
       "tag": "♻️ BEST-PING",
       "outbounds": [
-        "🇮🇩 First Cagayan Converge Data Center Inc. WS NTLS [smart]",
-        "🇮🇩 PT Pusat Media Indonesia WS NTLS [smart]",
-        "🇮🇩 Amazon.com WS NTLS [smart]",
-        "🇮🇩 PT MITRA VISIONER WS NTLS [smart]",
-        "🇮🇩 CV. Rumahweb Indonesia WS NTLS [smart]",
-        "🇸🇬 SGP_VULTR_CUST WS NTLS [smart]",
-        "🇸🇬 Greencloud LLC WS NTLS [smart]",
-        "🇸🇬 Alibaba Cloud - SG WS NTLS [smart]",
-        "🇸🇬 DigitalOcean WS NTLS [smart]",
-        "🇸🇬 Oracle Corporation WS NTLS [smart]",
-        "UDP CONNECTION☁"
+        "vless-ws-ntls",
+        "natanvpn",
+        "kingxstvVM672"
       ],
       "url": "https://www.gstatic.com/generate_204",
       "interval": "30s",
@@ -88,17 +80,9 @@
       "tag": "🚀 INTERNET",
       "outbounds": [
         "♻️ BEST-PING",
-        "🇮🇩 First Cagayan Converge Data Center Inc. WS NTLS [smart]",
-        "🇮🇩 PT Pusat Media Indonesia WS NTLS [smart]",
-        "🇮🇩 Amazon.com WS NTLS [smart]",
-        "🇮🇩 PT MITRA VISIONER WS NTLS [smart]",
-        "🇮🇩 CV. Rumahweb Indonesia WS NTLS [smart]",
-        "🇸🇬 SGP_VULTR_CUST WS NTLS [smart]",
-        "🇸🇬 Greencloud LLC WS NTLS [smart]",
-        "🇸🇬 Alibaba Cloud - SG WS NTLS [smart]",
-        "🇸🇬 DigitalOcean WS NTLS [smart]",
-        "🇸🇬 Oracle Corporation WS NTLS [smart]",
-        "UDP CONNECTION☁",
+        "vless-ws-ntls",
+        "natanvpn",
+        "kingxstvVM672",
         "direct"
       ],
       "default": "♻️ BEST-PING",
@@ -183,155 +167,44 @@
     },
     {
       "type": "vless",
-      "tag": "🇮🇩 First Cagayan Converge Data Center Inc. WS NTLS [smart]",
+      "tag": "vless-ws-ntls",
       "server": "quiz.vidio.com",
       "server_port": 80,
-      "uuid": "5df196b2-926e-4373-87b5-639d50d66380",
+      "uuid": "25982597-25a9-48a9-ab2f-aa719af3a950",
       "transport": {
         "type": "ws",
-        "path": "/203.194.112.119-2053",
+        "path": "/vless-ws",
         "headers": {
-          "Host": "smart.flex.biz.id"
+          "Host": "free-tendo.store"
         }
       }
     },
     {
       "type": "vless",
-      "tag": "🇮🇩 PT Pusat Media Indonesia WS NTLS [smart]",
-      "server": "quiz.vidio.com",
+      "tag": "natanvpn",
+      "server": "support.vidio.com",
       "server_port": 80,
-      "uuid": "5df196b2-926e-4373-87b5-639d50d66380",
-      "transport": {
-        "type": "ws",
-        "path": "/103.6.207.108-8080",
-        "headers": {
-          "Host": "smart.flex.biz.id"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇮🇩 Amazon.com WS NTLS [smart]",
-      "server": "quiz.vidio.com",
-      "server_port": 80,
-      "uuid": "5df196b2-926e-4373-87b5-639d50d66380",
-      "transport": {
-        "type": "ws",
-        "path": "/43.218.77.16-1443",
-        "headers": {
-          "Host": "smart.flex.biz.id"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇮🇩 PT MITRA VISIONER WS NTLS [smart]",
-      "server": "quiz.vidio.com",
-      "server_port": 80,
-      "uuid": "5df196b2-926e-4373-87b5-639d50d66380",
-      "transport": {
-        "type": "ws",
-        "path": "/206.84.101.83-8443",
-        "headers": {
-          "Host": "smart.flex.biz.id"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇮🇩 CV. Rumahweb Indonesia WS NTLS [smart]",
-      "server": "quiz.vidio.com",
-      "server_port": 80,
-      "uuid": "5df196b2-926e-4373-87b5-639d50d66380",
-      "transport": {
-        "type": "ws",
-        "path": "/203.194.112.119-8443",
-        "headers": {
-          "Host": "smart.flex.biz.id"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇸🇬 SGP_VULTR_CUST WS NTLS [smart]",
-      "server": "quiz.vidio.com",
-      "server_port": 80,
-      "uuid": "4d71db41-e292-492f-90bc-c05773f594fa",
-      "transport": {
-        "type": "ws",
-        "path": "/139.180.215.77-57878",
-        "headers": {
-          "Host": "smart.flex.biz.id"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇸🇬 Greencloud LLC WS NTLS [smart]",
-      "server": "quiz.vidio.com",
-      "server_port": 80,
-      "uuid": "4d71db41-e292-492f-90bc-c05773f594fa",
-      "transport": {
-        "type": "ws",
-        "path": "/194.127.193.240-50791",
-        "headers": {
-          "Host": "smart.flex.biz.id"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇸🇬 Alibaba Cloud - SG WS NTLS [smart]",
-      "server": "quiz.vidio.com",
-      "server_port": 80,
-      "uuid": "4d71db41-e292-492f-90bc-c05773f594fa",
-      "transport": {
-        "type": "ws",
-        "path": "/47.74.254.191-8900",
-        "headers": {
-          "Host": "smart.flex.biz.id"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇸🇬 DigitalOcean WS NTLS [smart]",
-      "server": "quiz.vidio.com",
-      "server_port": 80,
-      "uuid": "4d71db41-e292-492f-90bc-c05773f594fa",
-      "transport": {
-        "type": "ws",
-        "path": "/178.128.80.43-443",
-        "headers": {
-          "Host": "smart.flex.biz.id"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇸🇬 Oracle Corporation WS NTLS [smart]",
-      "server": "quiz.vidio.com",
-      "server_port": 80,
-      "uuid": "2f6e2648-3eb4-4d8d-bac1-d7885ccb16b3",
-      "transport": {
-        "type": "ws",
-        "path": "/138.2.89.238-43254",
-        "headers": {
-          "Host": "smart.flex.biz.id"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "UDP CONNECTION☁",
-      "server": "quiz.int.vidio.com",
-      "server_port": 80,
-      "uuid": "271fcd85-9132-4d05-a243-a602fbd43b5e",
+      "uuid": "54346ed7-4faa-42bf-9548-b0f8c961f610",
       "transport": {
         "type": "ws",
         "path": "/vless",
         "headers": {
-          "Host": "3.round.web.id"
+          "Host": "7.round.web.id"
+        }
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "kingxstvVM672",
+      "server": "support.vidio.com",
+      "server_port": 80,
+      "uuid": "d5ab3c2b-0285-439d-b7a0-e0209eeaf332",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/vmess",
+        "headers": {
+          "Host": "id-vip.kingstores.site"
         }
       }
     }
