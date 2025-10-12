@@ -147,10 +147,15 @@
         "CF WORKER",
         "PREMIUM"
       ],
+      "use_all_providers": true,
       "url": "https://www.gstatic.com/generate_204",
       "interval": "3m0s",
-      "tolerance": 1,
-      "idle_timeout": "5m0s"
+      "tolerance": 20,
+      "idle_timeout": "30m0s",
+      "fallback": {
+        "enabled": true,
+        "max_delay": "100ms"
+      }
     },
     {
       "type": "loadbalance",
