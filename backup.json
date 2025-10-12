@@ -1,0 +1,278 @@
+{
+  "log": {
+    "level": "error",
+    "output": "box.log",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "type": "https",
+        "tag": "google-dns",
+        "detour": "🚀 Latency",
+        "domain_resolver": {
+          "server": "google-udp",
+          "strategy": "prefer_ipv4"
+        },
+        "server": "dns.google"
+      },
+      {
+        "type": "udp",
+        "tag": "google-udp",
+        "server": "8.8.8.8"
+      },
+      {
+        "type": "https",
+        "tag": "cloudflare-dns",
+        "detour": "🌐 Internet",
+        "domain_resolver": {
+          "server": "cloudflare-udp",
+          "strategy": "prefer_ipv4"
+        },
+        "server": "cloudflare-dns.com"
+      },
+      {
+        "type": "udp",
+        "tag": "cloudflare-udp",
+        "server": "1.1.1.1"
+      },
+      {
+        "type": "udp",
+        "tag": "dns-direct",
+        "server": "112.215.203.246",
+        "server_port": 53
+      },
+      {
+        "type": "local",
+        "tag": "dns-local"
+      },
+      {
+        "type": "fakeip",
+        "tag": "remote",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
+      }
+    ],
+    "rules": [
+      {
+        "domain": [
+          "plus-store.naver.com",
+          "ava.game.naver.com",
+          "investor.fb.com",
+          "investors.spotify.com",
+          "nontontv.vidio.com",
+          "support.vidio.com",
+          "img.email2.vidio.com",
+          "quiz.int.vidio.com",
+          "quiz.vidio.com",
+          "v8.kuramanime.run",
+          "kuramanime.run",
+          "api24-normal-alisg.tiktokv.com",
+          "grabacademyportal.grab.com"
+        ],
+        "server": "dns-local"
+      },
+      {
+        "domain": [
+          "13.round.web.id",
+          "siren.nayumiwandi.workers.dev",
+          "shiroko.shirokoyumi.workers.dev",
+          "layla.mayumiyui.my.id",
+          "yumicftigarun.web.id",
+          "diona.sokove5110.workers.dev"
+        ],
+        "server": "google-dns"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "remote"
+      }
+    ],
+    "final": "cloudflare-dns",
+    "strategy": "ipv4_only"
+  },
+  "inbounds": [
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "0.0.0.0",
+      "listen_port": 9001,
+      "tcp_fast_open": true,
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "interface_name": "tunelm0n",
+      "mtu": 1690,
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "stack": "system",
+      "sniff": true,
+      "endpoint_independent_nat": true
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "direct",
+      "tag": "📣 DIRECT"
+    },
+    {
+      "type": "selector",
+      "tag": "🌐 Internet",
+      "outbounds": [
+        "🚀 Latency",
+        "🌍 LoadBalance",
+        "📍 CF WORKER",
+        "⚙️ PREMIUM",
+        "📣 DIRECT"
+      ],
+      "providers": null,
+      "default": "🚀 Latency"
+    },
+    {
+      "type": "urltest",
+      "tag": "🚀 Latency",
+      "outbounds": null,
+      "providers": [
+        "CF WORKER",
+        "PREMIUM"
+      ],
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "3m0s",
+      "tolerance": 1,
+      "idle_timeout": "5m0s"
+    },
+    {
+      "type": "loadbalance",
+      "tag": "🌍 LoadBalance",
+      "outbounds": null,
+      "providers": [
+        "CF WORKER",
+        "PREMIUM"
+      ],
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "3m0s",
+      "idle_timeout": "30m0s",
+      "ttl": "10m0s",
+      "interrupt_exist_connections": true,
+      "strategy": "round-robin"
+    },
+    {
+      "type": "selector",
+      "tag": "📍 CF WORKER",
+      "outbounds": null,
+      "providers": [
+        "CF WORKER"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "⚙️ PREMIUM",
+      "outbounds": null,
+      "providers": [
+        "PREMIUM"
+      ]
+    }
+  ],
+  "providers": [
+    {
+      "type": "local",
+      "tag": "CF WORKER",
+      "path": "p1.yaml",
+      "health_check": {
+        "enabled": true,
+        "url": "https://www.gstatic.com/generate_204",
+        "interval": "3m0s",
+        "timeout": "5m0s"
+      }
+    },
+    {
+      "type": "local",
+      "tag": "PREMIUM",
+      "path": "p2.yaml",
+      "health_check": {
+        "enabled": true,
+        "url": "https://www.gstatic.com/generate_204",
+        "interval": "3m0s",
+        "timeout": "5m0s"
+      }
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "package_name": [
+              "com.whatsapp",
+              "com.whatsapp.w4b"
+            ]
+          },
+          {
+            "network": "tcp"
+          }
+        ],
+        "outbound": "🌐 Internet"
+      },
+      {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "package_name": [
+              "com.whatsapp",
+              "com.whatsapp.w4b"
+            ]
+          },
+          {
+            "network": "udp"
+          }
+        ],
+        "outbound": "⚙️ PREMIUM"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "protocol": "dns"
+          },
+          {
+            "port": 53
+          }
+        ],
+        "action": "hijack-dns"
+      }
+    ],
+    "final": "🌐 Internet",
+    "auto_detect_interface": true,
+    "default_domain_resolver": {
+      "server": "dns-direct",
+      "rewrite_ttl": 60
+    }
+  },
+  "experimental": {
+    "clash_api": {
+      "external_controller": "0.0.0.0:9090",
+      "external_ui": "dist",
+      "external_ui_download_url": "https://github.com/Zephyruso/zashboard/releases/latest/download/dist-cdn-fonts.zip",
+      "external_ui_download_detour": "🌐 Internet",
+      "default_mode": "rule",
+      "access_control_allow_origin": "*"
+    },
+    "urltest_unified_delay": true
+  }
+}
