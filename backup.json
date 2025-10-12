@@ -92,7 +92,8 @@
       }
     ],
     "final": "cloudflare-dns",
-    "strategy": "ipv4_only"
+    "strategy": "ipv4_only",
+    "independent_cache": true
   },
   "inbounds": [
     {
