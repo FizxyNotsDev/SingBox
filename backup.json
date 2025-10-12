@@ -272,6 +272,13 @@
     }
   },
   "experimental": {
+      "cache_file": {
+      "enabled": true,
+      "path": "fakeip.cache",
+      "store_fakeip": true,
+      "store_rdrc": true,
+      "rdrc_timeout": "1m0s"
+    },
     "clash_api": {
       "external_controller": "0.0.0.0:9090",
       "external_ui": "dist",
