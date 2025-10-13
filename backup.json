@@ -133,7 +133,6 @@
       "tag": "🌐 Internet",
       "outbounds": [
         "🚀 Latency",
-        "🌍 LoadBalance",
         "📍 CF WORKER",
         "⚙️ PREMIUM",
         "📣 DIRECT"
