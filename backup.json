@@ -160,21 +160,6 @@
       }
     },
     {
-      "type": "loadbalance",
-      "tag": "🌍 LoadBalance",
-      "outbounds": null,
-      "providers": [
-        "CF WORKER",
-        "PREMIUM"
-      ],
-      "url": "https://www.gstatic.com/generate_204",
-      "interval": "3m0s",
-      "idle_timeout": "30m0s",
-      "ttl": "10m0s",
-      "interrupt_exist_connections": true,
-      "strategy": "round-robin"
-    },
-    {
       "type": "selector",
       "tag": "📍 CF WORKER",
       "outbounds": null,
