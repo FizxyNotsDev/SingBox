@@ -186,7 +186,7 @@
         "enabled": true,
         "url": "https://www.gstatic.com/generate_204",
         "interval": "3m0s",
-        "timeout": "5m0s"
+        "timeout": "5s"
       }
     },
     {
@@ -197,7 +197,7 @@
         "enabled": true,
         "url": "https://www.gstatic.com/generate_204",
         "interval": "3m0s",
-        "timeout": "5m0s"
+        "timeout": "5s"
       }
     }
   ],
