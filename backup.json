@@ -121,6 +121,7 @@
       "stack": "system",
       "sniff": true,
       "sniff_override_destination": true,
+      "sniff_timeout": "300ms",
       "endpoint_independent_nat": true
     }
   ],
