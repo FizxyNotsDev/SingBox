@@ -284,6 +284,37 @@
         "outbound": "⚙️ PREMIUM"
       },
       {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "package_name": [
+              "com.ss.android.ugc.trill",
+              "com.lemon.lvoverseas",
+              "app.rvx.android.youtube",
+              "org.telegram.messenger"
+            ]
+          }
+        ],
+        "outbound": "📍 CF WORKER"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "package_name": [
+              "com.whatsapp",
+              "com.openai.chatgpt",
+              "com.mobilechess.gp",
+              "id.dana",
+              "com.apps.MyXL"
+            ]
+          }
+        ],
+        "outbound": "⚙️ PREMIUM"
+      },
+      {
         "rule_set": "oisd-full",
         "outbound": "📢 AdsBlock"
       },
