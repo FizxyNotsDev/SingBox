@@ -139,6 +139,7 @@
       "tag": "🌐 Internet",
       "outbounds": [
         "🚀 Latency",
+        "🔁 Balance",
         "📍 CF WORKER",
         "⚙️ PREMIUM",
         "📣 DIRECT"
@@ -163,6 +164,21 @@
         "enabled": true,
         "max_delay": "100ms"
       }
+    },
+    {
+      "type": "loadbalance",
+      "tag": "🔁 Balance",
+      "outbounds": null,
+      "providers": [
+        "CF WORKER",
+        "PREMIUM"
+      ],
+      "use_all_providers": true,
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "2m0s",
+      "idle_timeout": "10m0s",
+      "ttl": "10m0s",
+      "strategy": "round-robin"
     },
     {
       "type": "selector",
