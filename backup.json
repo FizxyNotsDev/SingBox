@@ -131,6 +131,10 @@
       "tag": "📣 DIRECT"
     },
     {
+      "type": "block",
+      "tag": "⛔ REJECT"
+    },
+    {
       "type": "selector",
       "tag": "🌐 Internet",
       "outbounds": [
@@ -174,6 +178,31 @@
       "outbounds": null,
       "providers": [
         "PREMIUM"
+     ]
+    },
+    {
+      "type": "selector",
+      "tag": "📢 AdsBlock",
+      "outbounds": [
+        "📍 CF WORKER",
+        "⚙️ PREMIUM",
+        "📣 DIRECT",
+        "⛔ REJECT"
+      ],
+      "providers": null,
+      "default": "⛔ REJECT"
+    },
+    {
+      "type": "selector",
+      "tag": "🔞 NSFWBlock",
+      "outbounds": [
+        "📍 CF WORKER",
+        "⚙️ PREMIUM",
+        "📣 DIRECT",
+        "⛔ REJECT"
+      ],
+      "providers": null,
+      "default": "⛔ REJECT"
       ]
     }
   ],
@@ -240,6 +269,18 @@
         "outbound": "⚙️ PREMIUM"
       },
       {
+        "rule_set": "oisd-full",
+        "outbound": "📢 AdsBlock"
+      },
+      {
+        "rule_set": "oisd-nsfw",
+        "outbound": "🔞 NSFWBlock"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "📣 DIRECT"
+      },
+      {
         "type": "logical",
         "mode": "or",
         "rules": [
@@ -251,10 +292,22 @@
           }
         ],
         "action": "hijack-dns"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "oisd-full",
+        "url": "https://github.com/malikshi/sing-box-geo/raw/refs/heads/rule-set-geosite/geosite-oisd-full.srs",
+        "download_detour": "🌐 Internet",
+        "update_interval": "24h0m0s"
       },
       {
-        "ip_is_private": true,
-        "outbound": "📣 DIRECT"
+        "type": "remote",
+        "tag": "oisd-nsfw",
+        "url": "https://github.com/malikshi/sing-box-geo/raw/refs/heads/rule-set-geosite/geosite-oisd-nsfw.srs",
+        "download_detour": "🌐 Internet",
+        "update_interval": "24h0m0s"
       }
     ],
     "final": "🌐 Internet",
