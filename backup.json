@@ -93,7 +93,7 @@
       }
     ],
     "final": "cloudflare-dns",
-    "strategy": "ipv4_only",
+    "strategy": "prefer_ipv4",
     "independent_cache": true,
     "cache_capacity": 256
   },
@@ -117,7 +117,6 @@
         "fdfe:dcba:9876::1/126"
       ],
       "auto_route": true,
-      "strict_route": true,
       "stack": "system",
       "sniff": true,
       "sniff_override_destination": true,
