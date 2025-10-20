@@ -118,6 +118,13 @@
       ],
       "auto_route": true,
       "stack": "system",
+      "platform": {
+        "http_proxy": {
+          "enabled": true,
+          "server": "127.0.0.1",
+          "server_port": 7890
+        }
+      },
       "sniff": true,
       "sniff_override_destination": true,
       "sniff_timeout": "300ms",
