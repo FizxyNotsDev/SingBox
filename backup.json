@@ -272,10 +272,6 @@
         "outbound": "📣 DIRECT"
       },
       {
-        "clash_mode": "Rule",
-        "outbound": "🌐 Internet"
-      },
-      {
         "inbound": "tun-in",
         "action": "sniff"
       },
@@ -340,6 +336,10 @@
           }
         ],
         "action": "hijack-dns"
+      },
+      {
+        "clash_mode": "Rule",
+        "outbound": "🌐 Internet"
       }
     ],
     "rule_set": [
