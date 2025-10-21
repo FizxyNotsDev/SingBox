@@ -155,7 +155,7 @@
       "providers": [
         "CF WORKER"
       ],
-      "use_all_providers": true,
+      "use_all_providers": false,
       "url": "https://www.gstatic.com/generate_204",
       "interval": "3m0s",
       "tolerance": 20,
