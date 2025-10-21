@@ -154,8 +154,7 @@
       "tag": "🚀 Latency",
       "outbounds": null,
       "providers": [
-        "CF WORKER",
-        "PREMIUM"
+        "CF WORKER"
       ],
       "use_all_providers": true,
       "url": "https://www.gstatic.com/generate_204",
@@ -166,21 +165,6 @@
         "enabled": true,
         "max_delay": "100ms"
       }
-    },
-    {
-      "type": "loadbalance",
-      "tag": "🔁 Balance",
-      "outbounds": null,
-      "providers": [
-        "CF WORKER",
-        "PREMIUM"
-      ],
-      "use_all_providers": true,
-      "url": "https://www.gstatic.com/generate_204",
-      "interval": "2m0s",
-      "idle_timeout": "10m0s",
-      "ttl": "10m0s",
-      "strategy": "round-robin"
     },
     {
       "type": "selector",
@@ -194,16 +178,6 @@
       "type": "selector",
       "tag": "⚙️ PREMIUM",
       "outbounds": null,
-      "providers": [
-        "PREMIUM"
-     ]
-    },
-    {
-      "type": "selector",
-      "tag": "🎮 GAMES",
-      "outbounds": [
-        "📣 DIRECT"
-      ],
       "providers": [
         "PREMIUM"
      ]
@@ -265,48 +239,20 @@
         "action": "sniff"
       },
       {
-        "type": "logical",
-        "mode": "and",
-        "rules": [
-          {
-            "package_name": [
-              "com.whatsapp",
-              "com.whatsapp.w4b"
-            ]
-          },
-          {
-            "network": "tcp"
-          }
-        ],
-        "outbound": "🌐 Internet"
-      },
-      {
-        "type": "logical",
-        "mode": "and",
-        "rules": [
-          {
-            "package_name": [
-              "com.whatsapp",
-              "com.whatsapp.w4b"
-            ]
-          },
-          {
-            "network": "udp"
-          }
-        ],
-        "outbound": "⚙️ PREMIUM"
-      },
-      {
-        "package_name": "com.mobilechess.gp",
-        "outbound": "🎮 GAMES"
-      },
-      {
         "rule_set": "oisd-full",
         "action": "reject"
       },
       {
         "rule_set": "oisd-nsfw",
         "action": "reject"
+      },
+      {
+        "network": "tcp",
+        "outbound": "🌐 Internet"
+      },
+      {
+        "network": "udp",
+        "outbound": "⚙️ PREMIUM"
       }
     ],
     "rule_set": [
