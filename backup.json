@@ -137,10 +137,6 @@
       "tag": "📣 DIRECT"
     },
     {
-      "type": "block",
-      "tag": "⛔ REJECT"
-    },
-    {
       "type": "selector",
       "tag": "🌐 Internet",
       "outbounds": [
@@ -240,6 +236,23 @@
   "route": {
     "rules": [
       {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "protocol": "dns"
+          },
+          {
+            "port": 53
+          }
+        ],
+        "action": "hijack-dns"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "📣 DIRECT"
+      },
+      {
         "clash_mode": "Global",
         "outbound": "🌐 Internet"
       },
@@ -284,7 +297,6 @@
         "outbound": "⚙️ PREMIUM"
       },
       {
-        "action": "route",
         "package_name": "com.mobilechess.gp",
         "outbound": "🎮 GAMES"
       },
@@ -295,27 +307,6 @@
       {
         "rule_set": "oisd-nsfw",
         "action": "reject"
-      },
-      {
-        "ip_is_private": true,
-        "outbound": "📣 DIRECT"
-      },
-      {
-        "type": "logical",
-        "mode": "or",
-        "rules": [
-          {
-            "protocol": "dns"
-          },
-          {
-            "port": 53
-          }
-        ],
-        "action": "hijack-dns"
-      },
-      {
-        "clash_mode": "Rule",
-        "outbound": "🌐 Internet"
       }
     ],
     "rule_set": [
