@@ -120,7 +120,7 @@
         "http_proxy": {
           "enabled": true,
           "server": "127.0.0.1",
-          "server_port": 7890
+          "server_port": 9001
         }
       },
       "sniff": true,
